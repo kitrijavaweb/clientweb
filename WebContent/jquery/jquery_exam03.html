@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="../common/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//아이디체크하기 - 4글자 이상 , java면 이미 사용중인 아이디 아니면 사용가능아이디
+		//출력하기 - jQuery로 변경하기
+
+		$(document).ready(function() {
+			$("#setid").on("keyup", function() {
+				getId = $("#setid").val();
+				if (getId == "java" && getId.length >= 4) {
+					$("#result").text("이미 사용중인 아이디 입니다.");
+				} else {
+					$("#result").text("사용가능 한 아이디 입니다.");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>티몬 회원가입</h1>
+	<h2>필수항목</h2>
+	<form name="myform">
+		아이디:<input type="text" id="setid" />
+	</form>
+	<div id="result" style="color: red;"></div>
+</body>
+</html>

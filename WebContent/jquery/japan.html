@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function btnclick(){
+			data=document.getElementById("num");
+			alert(data.getAttribute("name"));
+		}
+	</script>
+<title>자판기</title>
+</head>
+<body>
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://dairyqueen.kr/wp-content/uploads/2017/08/dq_korea_products_chilsung_cider.png"
+						class="img-responsive" style="width: 150px">
+				</div>
+				<div class="panel-footer">800원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://delivery.kfckorea.com/resources/images/menu/list/180102105311_list.png"
+						class="img-responsive" style="width: 205px" alt="Image">
+				</div>
+				<div class="panel-footer">1500원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://www.eazymall.net/mall/shop_image/201304/003000000000066.gif"
+						class="img-responsive" style="width: 150px" alt="Image">
+				</div>
+				<div class="panel-footer">1500원</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://mblogthumb3.phinf.naver.net/MjAxNjEyMjhfMTI0/MDAxNDgyODkyMjU1NzY5.GbXw-p6JgDT75oyFQK7KmVp_LBuNEXnMVJnXV8PKAZIg.hqePV5l2hkwN2xFxVpwsYZNIk1KfKIHKlrVSdJGX690g.PNG.coupang_kr/%EB%A0%88%EC%93%B0%EB%B9%84.png?type=w800"
+						class="img-responsive" style="width: 200px">
+				</div>
+				<div class="panel-footer">800원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://www.eazymall.net/mall/shop_image/201304/006000000004016.gif"
+						class="img-responsive" style="width: 150px" alt="Image">
+				</div>
+				<div class="panel-footer">800원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="https://image.redbull.com/rbx00264/0100/0/406/products/packshots/ko_KR/RBED_Closed_Digital.png"
+						class="img-responsive" style="width: 80px" alt="Image">
+				</div>
+				<div class="panel-footer">1000원</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://eazymall.net/mall/shop_image/201304/001000000000341%281%29.gif"
+						class="img-responsive" style="width: 150px">
+				</div>
+				<div class="panel-footer">1500원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img src="https://www.pepsi.com/en-us/uploads/images/can-pepsi.png"
+						class="img-responsive" style="width: 81px" alt="Image">
+				</div>
+				<div class="panel-footer">1500원</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel-body" align="center">
+					<img
+						src="http://www.marketbong.com/uploadfiles/product_img/%ED%8A%B8%EB%A1%9C%ED%94%BC%EC%B9%B4%EB%82%98%EC%95%A0%ED%94%8C[350].png"
+						class="img-responsive" style="width: 150px" alt="Image">
+				</div>
+				<div class="panel-footer">1500</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav nav-pills nav-justified" style="text-align: center;">
+				<li><button class="btn btn-default" value="800" id="num" name="칠성사이다" onclick="btnclick()" >칠성사이다</button></li>
+				<li><button class="btn btn-default" value="1500" id="num" name="코카콜라" onclick="btnclick()" >코카콜라</button></li>
+				<li><button class="btn btn-default" value="1500" id="num" onclick="btnclick()" >포카리스웨트</button></li>
+				<li><button class="btn btn-default" value="800" id="num" onclick="btnclick()" >레츠비</button></li>
+				<li><button class="btn btn-default" value="800" id="num" onclick="btnclick()" >산타페</button></li>
+				<li><button class="btn btn-default" value="1000" id="num" onclick="btnclick()" >레드불</button></li>
+				<li><button class="btn btn-default" value="1500" id="num" onclick="btnclick()" >마운틴 듀</button></li>
+				<li><button class="btn btn-default" value="1500" id="num" onclick="btnclick()" >펩시</button></li>
+				<li><button class="btn btn-default" value="1500" id="num" onclick="btnclick()" >트로피카나</button></li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>

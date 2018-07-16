@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function calc2() {
+		id=document.exam02.id.value;
+		//브라우저객체도 자바스크립트에서 변수로 정의하고 사용할 수 있다.
+		resultDIv=document.getElementById("label");
+		str="";//div에 출력할 문자열을 저장할 변수
+		if(id.length<4){
+			str="4글자 이상의 글자를 입력하세요";
+		}else{
+			//기존의 존재하는 아이디인지 평가(Ajax처리 -db연동)
+			if(id=="java"){
+				str="이미사용중인 아이디 입니다.";
+			}else{
+				str="사용가능한 아이디 입니다.";
+			}
+		}
+		resultDIv.innerHTML=str;
+	}
+	
+	</script>
+	<style type="text/css">
+	div{
+		font-weight:bold;
+		color: red;
+	}
+	
+	</style>
+</head>
+<body>
+	<h2>티몬 회원 가입</h2>
+	<h3>필수 항목</h3>
+	<form name="exam02">
+		아이디:<input type="text" name="id" onkeyup="calc2(this.form)"/>
+	</form>
+	<div id="label"></div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+ <html lang="en" class="no-js"> 
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		 <link href="../css/login.css" rel="stylesheet" id="bootstrap-css">
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1>로그인 및 회원가입</h1>
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1>로그인</h1> 
+                                <p> 
+                                    <label for="username" class="uname" > 이메일 주소 및 아이디 </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="ex) 이메일 주소 및 아이디"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd"> 비밀번호 </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="ex) 비밀번호" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">아이디 기억하기</label>
+								</p>
+                                <p class="login button"> 
+                                   <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" ></a>
+								</p>
+                                <p class="change_link">
+									회원이 아니십니까?
+									<a href="#toregister" class="to_register">회원 가입</a>
+								</p>
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1> 회원 가입 </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" >사용자 ID</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="ex) 아이디" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail"  > 이메일</label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="ex) 이메일주소"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" >비밀번호 </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="ex) 패스워드"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" >비밀번호 확인 </label>
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="ex) 패스워드"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="가입하기"/> 
+								</p>
+                                <p class="change_link">  
+									이미 회원 이십니까 ?
+									<a href="#tologin" class="to_register"> 로그인화면 </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>

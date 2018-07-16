@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function showData(zip,addr) {
+			//부모창에 선택한 주소에 대한 상세주소와 우편번호를 출력
+			window.opener.document.kitri.zipcode.value=zip;
+			window.opener.document.kitri.address.value=addr;
+			window.close();
+		}
+		function test(){
+			document.idcheck.id.value=opener.document.kitri.id.value;
+		}
+	</script>
+</head>
+<body bgcolor="skyblue" onload="test()">
+	<form action="search.jsp" name="idcheck">
+		<input type="text" name="id">
+		<input type="submit" value="중복체크" onclick="idcheck()">
+	</form>
+	<a href="javascript:showData('111-111','서울시 구로동')">구로동</a><br/>
+	<a href="javascript:showData('211-112','서울시 서초동')">서초동</a><br/>
+	<a href="javascript:showData('311-113','인천시 남촌동')">남촌동</a><br/>
+	<a href="javascript:showData('411-114','인천시 주안동')">주안동</a><br/>
+	<a href="javascript:showData('511-115','광주시 중앙동')">중앙동</a><br/>
+</body>
+</html>

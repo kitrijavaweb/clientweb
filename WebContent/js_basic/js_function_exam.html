@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function printgugu() {
+		document.write("<table border='1'>")
+		for (var j = 2; j <= 9; j++) {
+			document.write("<tr>")
+			for (var i = 1; i <= 9; i++) {
+				if (i === j) {
+					document.write("<td bgcolor='yellow'>", j, "*", i, "=", j
+							* i, "</td>")
+				} else {
+					document.write("<td>", j, "*", i, "=", j * i, "</td>")
+				}
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+	}
+	//함수내부에서 단을 입력받도록 코드를 구성한 후 입력받은 단에 대한 구구단을 출력
+	function print() {
+		document.write("<table border='1'>")
+		num = parseInt(window.prompt("원하는 단의 숫자를 입력하세요."))
+		document.write("<tr>")
+		for (var i = 1; i <= 9; i++) {
+			document.write("<td>", num, "*", i, "=", num * i, "</td>")
+		}
+		document.write("</tr>")
+		document.write("</table>")
+	}
+	//함수 내부에서 숫자1,숫자2,연산자 입력받아서 연산하기
+	function calc() {
+		alert("구구단 출력 준비를 시작합니다.");
+		num1 = parseInt(window.prompt("원하는 단의 숫자를 입력하세요."));
+		num2 = parseInt(window.prompt("원하는 숫자를 입력하세요."));
+		value = window.prompt("연산자를 선택하십시오.");
+		document.write("<table border='1'>")
+		switch (value) {
+		case "*":
+			document.write("<tr>")
+			for (var i = 1; i <= num2; i++) {
+				document.write("<td>", num1, value, i, "=", num1 * i, "</td>")
+			}
+			document.write("</tr>")
+			break;
+		default:
+			alert("잘못 입력하셨습니다.");
+			break;
+		}
+		document.write("</table>")
+	}
+	function haptest(num) {
+		var result = 0;
+		for (i = 1; i <= num; i++) {
+			result += i;
+		}
+		return result;
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="전체구구단 출력" onclick="printgugu()">
+	<input type="button" value="입력받은 단을 구구단으로 출력하기" onclick="print()">
+	<input type="button" value="연산하기" onclick="calc()">
+	<script type="text/javascript">
+		//숫자를 입력받아서 1부터 입력받은 수까지의 합을 구해서 리턴하세요.
+		num = parseInt(window.prompt("입력받은 숫자의 합을 구합니다. 숫자를 입력하세요."));
+		returnVal = haptest(num);
+		alert("총합 : " + returnVal);
+	</script>
+</body>
+</html>

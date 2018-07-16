@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function allchk2() {
+			chklist=document.myform.prd;
+			chk=document.myform.allchk.checked;
+			for(i=0;i<chklist.length;i++){
+				chklist[i].checked=chk;
+			}
+			price2();
+		}
+		
+		function price2(){
+			count=document.myform.count;
+			price=document.myform.price;
+			chklist=document.myform.prd;
+			var result=0;
+			var sum=0;
+			for(i=0;i<chklist.length;i++){
+				if(chklist[i].checked){
+				result=count[i].value*price[i].value;
+				document.getElementById("result"+(i+1)).innerHTML=result;
+				sum+=result;
+				}else{
+				document.getElementById("result"+(i+1)).innerHTML="";	
+				sum-=result;
+				}
+			}
+			document.getElementById("totalprice").innerHTML=sum;
+		}
+	
+	</script>
+</head>
+<body>
+	<!-- checkbox 테스트할때 -->
+	<form name="myform">
+		<table border="1" width="800">
+			<tr>
+				<td><input type="checkbox" name="allchk" onclick="allchk2()" />항목명</td>
+				<td>상품정보</td>
+				<td>수량</td>
+				<td>판매가</td>
+				<td>구매예정가</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="price2()"/>완도미역</td>
+				<td><img src="../images/pro1.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="price2()"/></td>
+				<td>
+				<input type="text" name="price" value="6900" onkeyup="price2()"/><span>원</span></td>
+				<td><span id="result1"></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="price2()"/>스카트 빨아쓰는 휴지</td>
+				<td><img src="../images/pro2.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="price2()"/></td>
+				<td><input type="text" name="price" value="7800" onkeyup="price2()"/><span>원</span></td>
+				<td><span id="result2"></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td colspan="6" align="right"><span id="totalprice"></span><span>원</span></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

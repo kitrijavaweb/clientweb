@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+	//오늘 날짜를 ___년___월__일__요일의 형태로 출력
+	//단, 요일은 배열을 이용해서 작업
+	today = new Date();
+	day = new Array("일","월","화","수","목","금","토");
+	num =today.getDay();
+	//toLocaleDateString()은 작업하는 pc의 locale정보에 지정되어 있는 날짜 표기법으로 객체의 요일정보를 리턴
+	//운영체제에 설정되어 있는 locale정보에 맞는 형태로 변환 
+	//한국 -_____년___월___일 
+	//미국 -____월/____일/____년/
+	document.write(today.toLocaleDateString()+" "+day[num]+"요일");
+	</script>
+</body>
+</html>

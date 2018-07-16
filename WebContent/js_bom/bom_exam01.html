@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	function calc2() {
+		num=window.document.exam01.calc.value;
+		result=12900*num-(12900*num/10);
+		document.getElementById("label").innerHTML=result;
+	}
+	
+	</script>
+</head>
+<body>
+	<form name="exam01">
+		수량:<input type="text" name="calc"	onkeypress="calc2()">
+		<span id="label"></span>
+	</form>
+</body>
+</html>

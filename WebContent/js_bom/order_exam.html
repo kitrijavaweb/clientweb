@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	font: 14px 굴림체;
+	text-align: center;
+}
+
+.main {
+  margin-top:15px;
+  width:700px;
+}
+div.heading {
+	font: 20px HY견고딕;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+div.subheading {
+	font: 15px HY견고딕;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.img {
+	float: left;
+	width: 350px;
+	
+}
+
+div.field {
+  
+  margin-bottom:5px;
+  text-align:right;
+}
+form{
+padding-left:0px;
+	
+}
+</style>
+	<script type="text/javascript">
+		function changeimg() {
+			name=document.orderform.name.value;
+		}
+		function order(){
+			sum=100000;
+			bbq=document.orderform.bbq.value;
+			blanket=document.orderform.blanket.value;
+			
+			
+			if(blanket){
+				//비비큐이용
+				ttbbq=bbq*10000;
+				//이불추가
+				document.orderform.count.value=parseInt(blanket)+1;
+				ttblanket=10000*parseInt(blanket);
+				document.orderform.subtotal.value=sum+ttbbq+ttblanket+(parseInt(document.orderform.count.value)*20000);
+				document.orderform.tax.value=parseInt(document.orderform.subtotal.value)/10;
+				document.orderform.total.value=parseInt(document.orderform.tax.value)+
+				parseInt(document.orderform.subtotal.value);
+			}
+			
+		}
+		function exec(workingform) {
+			document.getElementById("totalprice").innerHTML=
+				"객실:"+workingform.name.value+"<br/>"+
+				"바베큐:"+workingform.bbq.value+"<br/>"+
+				"이불수:"+workingform.blanket.value+"<br/>"+
+				"인원수:"+workingform.count.value+"<br/>"+
+				"금액:"+workingform.total.value+"<br/>"+
+				"세금:"+workingform.tax.value+"<br/>"+
+				"총금액:"+workingform.total.value;
+		}
+		function changeimg(){
+			var image=document.getElementById("img")
+			var name =document.orderform.name.value;
+			if(name=="에메랄드"){
+				image.src="../images/emerald1.jpg";
+			}else if(name=="루비"){
+				image.src="../images/ruby1.jpg";
+			}else if(name=="스카이1호"){
+				image.src="../images/sky01.jpg";
+			}else if(name=="별님실"){
+				image.src="../images/star1.jpg";
+			}else if(name=="사파이어"){
+				image.src="../images/sapphire1.jpg";
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="heading">펜션예약사항</div>
+		<div class="subheading">비수기 세일입니다. 펜션의 모든 방을 10만원에 단, 모든 방은
+			2인용입니다.!!</div>
+		<div class="img" name="img">
+			<img src="../images/ruby1.jpg" id="img" width="300" height="300" />
+		</div>
+		<form name="orderform" action="" method="post">
+			<div class="field">
+				객실명: <select name="name" id="name">
+					<option value="루비" onclick="changeimg()">루비</option>
+					<option value="에메랄드" onclick="changeimg()">에메랄드</option>
+					<option value="사파이어" onclick="changeimg()">사파이어</option>
+					<option value="스카이1호" onclick="changeimg()">스카이1호</option>
+					<option value="별님실" onclick="changeimg()">별님실</option>
+				</select>
+			</div>
+			<div class="field">
+				바베큐시설이용: 
+				<input type="text" id="bbq" name="bbq" value=""
+					onchange="order()" />
+			</div>
+			<div class="field">
+				이불추가: <input type="text" id="blanket" name="blanket" value=""
+					onchange="order()" />
+			</div>
+			<div class="field">
+				인원수: <input type="text" id="count" name="count" value=""
+					 onchange="order()"/>
+			</div>
+			<div class="field">
+				금액: <input type="text" id="subtotal" name="subtotal" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				부가세: <input type="text" id="tax" name="tax" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				총금액: <input type="text" id="total" name="total" value=""
+					readonly="readonly" />
+			</div>
+			<div class="field">
+				<input type="button" value="Place Order" 
+						onclick="exec(this.form)"/>
+			</div>
+	
+	</form>
+		<div id="totalprice" style="text-align: right;"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		today = new Date();
+		str=today.getDay()+1;
+		hour="";
+		if(today.getHours()<12){
+			hour="오전"
+		}else{
+			hour="오후"
+		}
+		switch(hour){
+		case "오전":
+				document.write("<img src='../images/jang",str,".jpg","'/>")
+				document.bgColor="green";
+				break;
+		case "오후":
+				document.write("<img src='../images/jang",str,".jpg","'/>")
+				document.bgColor="red";
+				break;
+
+		}
+
+	
+	</script>
+</body>
+</html>
+

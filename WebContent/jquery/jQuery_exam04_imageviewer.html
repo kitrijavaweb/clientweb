@@ -1,0 +1,42 @@
+
+<html>
+<head>
+<title>Stick Figure Adventure</title>
+	<script type="text/javascript" src="../common/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			num=1;
+			$("#gardenImg").attr("src","../images/m_garden01.jpg")
+			$("#prebtn").on("click",function(){
+				if(num<=1){
+					num=9;
+				}else{
+				num--;
+				}
+				$("#gardenImg").attr("src","../images/m_garden0"+num+".jpg")
+			});
+			$("#nextbtn").on("click",function(){
+				if(num>=9){
+					num=1;
+				}else{
+				num++;
+				}
+				$("#gardenImg").attr("src","../images/m_garden0"+num+".jpg")
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="text-align: center; font-family: HY견고딕; line-height: 1.6em">버튼을
+		누르세요:</div>
+	<div 
+	style="text-align: center; font-family: HY견고딕; 
+	line-height: 1.6em" id="gardentext"></div>
+
+	<div style="text-align: center">
+		<input type="button" id="prebtn" value=" << " />
+		<img id="gardenImg" alt="아침고요수목원" style="vertical-align: middle;" /> 
+		<input type="button" id="nextbtn" value=" >> "/>
+	</div>
+</body>
+</html>

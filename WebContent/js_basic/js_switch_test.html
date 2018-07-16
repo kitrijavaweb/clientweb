@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		num=90;
+		//switch문을 이용해서 수우미양가 평가해서 수이면 jang.jpg를 화면에 보여지도록 
+		//나머지 우미양가는 문자열만 alert으로 출력 100보다 크거나 0보다 작으면 "숫자를 잘못입력"
+		if(num>100||num<0){
+			alert("숫자를 잘못입력")
+		}else{
+			switch(Math.floor(num/10)){
+				case 10:
+				case 9:
+					alert("수");
+					document.write("<img src='../images/camila.jpg'>");
+					break;
+				case 8:
+					alert("우");
+				case 7:
+					alert("미");
+				case 6:
+					alert("양");
+				default :
+					alert("가");
+			}
+		}
+	</script>
+</body>
+</html>

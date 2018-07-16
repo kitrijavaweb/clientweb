@@ -1,0 +1,63 @@
+@CHARSET "EUC-KR";
+
+#main {
+	position: fixed;
+	float: left;
+	bottom: 3%;
+	width: 79%;
+	text-align: justify;
+	font-size: 9pt;
+}
+
+#garden { /*2번째 단락 내용*/
+	background-image: url("../images/background.gif");
+	background-repeat: no-repeat;
+	background-color: #a7cece;
+	border: solid white 1px;
+	padding: 20px;
+	margin: 20px;
+	padding-left: 80px;
+	font-style: italic;
+	font-size: 9pt;
+	height: 80px;
+	overflow: auto;
+}
+
+#maintitle {
+	color: #a7cece;
+	font-weight: bold;
+}
+
+#maintitle2 {
+	color: #a7cece;
+	font-weight: bold;
+}
+
+#garden02 {
+	float: right;
+	width: 19%;
+	border: solid #a7cece 1px;
+	border-right: hidden;
+	text-align: center;
+}
+
+h3 { /* 오른쪽 배너 장소이름 */
+	font-size: 11pt;
+	color: red;
+	font-weight: bold;
+}
+
+#sub { /*오른쪽 배너 내용  */
+	font-size: 9pt;
+}
+
+#subtitle {
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+#footer { /*하단 정보*/
+	clear: both;
+	text-align: center;
+	font-size: 9pt;
+}

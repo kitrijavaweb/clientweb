@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	date = new Date();
+	weekday = new Array("일", "월", "화", "수", "목", "금", "토");
+	lastDate = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+	//년도
+	year = date.getFullYear();
+	if( (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ){
+		lastDate[1] = 29;
+	};
+	//월
+	month = date.getMonth() + 1;
+	//일
+	day =date.getDate();
+	//해당하는 달의 1일
+	date.setMonth(month - 1, 1);
+	//해당하는 달의 1일에 해당하는 요일 구하기
+	value = date.getDay();
+	//해당하는달 마지막 날
+	num = lastDate[month - 1];
+	//공백일수+해당하는달 마지막날
+	hap = parseInt(num) + value;
+</script>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	text-align: center;
+}
+h2{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("<table border ='1'>");
+
+		document.write("<h2>" + year + "년" + month + "월" + "</h2>");
+		document.write("<tr>");
+		//요일
+		for (i = 0; i < weekday.length; i++) {
+			if(i==0){
+				document.write("<th bgcolor='#ffffcc' id=suday width='200' height='100'>"+"<font color=red>" + weekday[i] +"</font>" + "</th>");	
+			}else if(i==6){
+				document.write("<th bgcolor='#ffffcc' id=saday width='200' height='100'>" +"<font color=blue>"+ weekday[i] +"</font>" +"</th>");	
+			}else{
+				document.write("<th bgcolor='#ffffcc' id=day width='200' height='100'>" + weekday[i] + "</th>");
+			}
+		}
+		document.write("<tr>")
+		//달력일자
+		for (k = 1; k <= hap; k++) {
+			if (k <= value) {
+				document.write("<th bgcolor='#ffcccc' height='100'></th>");
+			} else if (k % 7 == 0) {
+				document.write("<th bgcolor='#ffcccc' height='100'>"+"<font color=blue>"  + (k - value) +"</font>"  + "</th>");
+				document.write("<tr>");
+			}else if(k-value==day){
+				document.write("<th bgcolor='#ccffff' height='100'>" + (k - value) + "</th>");
+			}else if(k % 7 == 1){
+				document.write("</tr>");
+				document.write("<th bgcolor='#ffcccc' height='100'>"+"<font color=red>"  + (k - value) +"</font>" + "</th>");
+			}else {
+				document.write("<th bgcolor='#ffcccc' height='100'>" + (k - value) + "</th>");
+			}
+		}
+		document.write("</tr>");
+		document.write("</table>");
+	</script>
+</body>
+</html>
